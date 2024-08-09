@@ -46,14 +46,14 @@ bool WindowsDolphinProcess::findPID()
                            (exeFile == utf8_to_wstring(s_dolphinProcessName) ||
                             exeFile == utf8_to_wstring(s_dolphinProcessName) + L".exe") :
                            (exeFile == L"Dolphin.exe" || exeFile == L"DolphinQt2.exe" ||
-                            exeFile == L"DolphinWx.exe")};
+                            exeFile == L"DolphinWx.exe" || exeFile == "Dolphin-MPN.exe")};
 #else
       const std::string exeFile{entry.szExeFile};
       const bool match{s_dolphinProcessName ?
                            (exeFile == s_dolphinProcessName ||
                             exeFile == std::string(s_dolphinProcessName) + ".exe") :
                            (exeFile == "Dolphin.exe" || exeFile == "DolphinQt2.exe" ||
-                            exeFile == "DolphinWx.exe")};
+                            exeFile == "DolphinWx.exe" || exeFile == "Dolphin-MPN.exe")};
 #endif
       if (match)
       {
